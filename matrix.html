@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Nomes em Ordem Alfabética</title>
+</head>
+<body>
+    <h1>Ordenar Nomes em Ordem Alfabética</h1>
+
+    <ul id="nomes">
+        <li>Zara</li>
+        <li>Bob</li>
+        <li>Alice</li>
+        <li>Carlos</li>
+        <li>Maria</li>
+    </ul>
+
+    <button onclick="ordenarNomes()">Ordenar Nomes</button>
+
+    <script>
+        function ordenarNomes() {
+            let ul = document.getElementById("nomes");
+            let lis = Array.from(ul.getElementsByTagName("li"));
+
+            // Ordenar os nomes alfabeticamente
+            for (let i = 0; i < lis.length - 1; i++) {
+                for (let j = i + 1; j < lis.length; j++) {
+                    if (lis[i].textContent > lis[j].textContent) {
+                        // Trocar os elementos de posição
+                        let temp = lis[i].textContent;
+                        lis[i].textContent = lis[j].textContent;
+                        lis[j].textContent = temp;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
