@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Matriz em Ordem Decrescente</title>
+</head>
+<body>
+    <h1>Ordenar Matriz em Ordem Decrescente</h1>
+
+    <ul id="numeros">
+        <li>5</li>
+        <li>2</li>
+        <li>8</li>
+        <li>1</li>
+        <li>4</li>
+    </ul>
+
+    <button onclick="ordenarDecrescente()">Ordenar em Ordem Decrescente</button>
+
+    <script>
+        function ordenarDecrescente() {
+            let ul = document.getElementById("numeros");
+            let lis = Array.from(ul.getElementsByTagName("li"));
+
+            let trocou;
+            do {
+                trocou = false;
+                for (let i = 0; i < lis.length - 1; i++) {
+                    if (parseInt(lis[i].textContent) < parseInt(lis[i + 1].textContent)) {
+                        let temp = lis[i].textContent;
+                        lis[i].textContent = lis[i + 1].textContent;
+                        lis[i + 1].textContent = temp;
+                        trocou = true;
+                    }
+                }
+            } while (trocou);
+        }
+    </script>
+</body>
+</html>
