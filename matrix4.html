@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar no Banco de Dados</title>
+</head>
+<body>
+    <h1>Buscar no Banco de Dados</h1>
+
+    <button onclick="buscarNoBanco()">Buscar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function buscarNoBanco() {
+            try {
+                // Simulação de uma busca no banco de dados que retorna um erro
+                throw new Error("Erro no banco de dados");
+            } catch (e) {
+                let resultado = document.getElementById("resultado");
+                resultado.textContent = "Ocorreu um erro: " + e.message;
+            }
+        }
+    </script>
+</body>
+</html>
